@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title ACCOUNT</title>
+</head>
+<body>
+    <form action="" method="post">
+        <p>Здравствуйте, {{fullname}}!</p>
+        <p>Ваш логин: {{login}}</p>
+        <p>Ваш пароль: {{password}}</p>
+        {% if not fullname and not login and not password %}
+            <p>Ошибка! Одно из полей пустое!</p>
+        {% endif %}
+    </form>
+    <form action="/">
+        <p>
+            <input type="submit" value="Вернуться назад">
+        </p>
+    </form>
+</body>
+</html>

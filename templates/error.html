@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title ERROR</title>
+</head>
+<body>
+    <form action="" method="post">
+        {% if login and password and not onReg %}
+            <p>Ошибка, пользователь: "{{login}}" не существует или пароль: "{{password}}" некорректный.</p>
+        {% elif login and onReg %}
+            <p>Ошибка, пользователь с логином: "{{login}}" уже существует.</p>
+        {% else %}
+            <p>Ошибка, Пустой ввод.</p>
+        {% endif %}
+    </form>
+
+    <form action="/">
+        {% if not onReg %}
+            <p><input type="submit" value="Вернуться назад"></p>
+        {% endif %}
+    </form>
+    <form action="/registration/">
+        {% if onReg %}
+            <p><input type="submit" value="Вернуться назад"></p>
+        {% endif %}
+    </form>
+
+    <form action="/registration/">
+        {% if not onReg %}
+            <p>Возможно, вы хотите зарегистрироваться?</p>
+            <p><input type="submit" value="Зарегистрироваться"></p>
+        {% endif %}
+    </form>
+</body>
+</html>
